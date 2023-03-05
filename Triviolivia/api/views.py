@@ -44,7 +44,6 @@ class QuestionDetail(APIView):
             return Question.objects.get(pk=pk)
         except:
             raise Http404
-        
     
     def get(self, request, pk):
         question = self.get_object(pk)
@@ -55,4 +54,22 @@ class UserList(APIView):
     def get(self, request):
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
+    
+class CategoryList(APIView):
+    def get(self, request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
+
+class DifficultyList(APIView):
+    def get(self, request):
+        difficulties = Difficulty.objects.all()
+        serializer = DifficultySerializer(difficulties, many=True)
+        return Response(serializer.data)
+    
+class EraList(APIView):
+    def get(self, request):
+        eras = Era.objects.all()
+        serializer = EraSerializer(eras, many=True)
         return Response(serializer.data)

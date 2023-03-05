@@ -3,20 +3,69 @@ import axios from 'axios';
 
 function App() {
   const [question, setQuestion] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [difficulties, setDifficulties] = useState([]);
+  const [eras, setEras] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get('/api/questions/?category=4&difficulty=2');
+      const response = await axios.get('/api/questions/?category=4&difficulty=2')
+
       setQuestion(response.data);
       console.log(response.data);
     }
     fetchData();
   }, []);
 
-  const handleNewQuestion = async () => {
-    const response = await axios.get('api/questions/');
-    setQuestion(response.data);
-  };
+  axios.get('/api/categories/')
+      .then(response => {
+        setCategories(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    axios.get('/api/difficulties/')
+      .then(response => {
+        setDifficulties(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+      axios.get('/api/eras/')
+      .then(response => {
+        setEras(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  
+    const handleEraChange = (event) => {
+      const selectedEras = Array.from(event.target.selectedOptions, option => option.value);
+      // Do something with the selected eras
+    };
+
+    const handleCategoryChange = (event) => {
+      const categoryId = event.target.value;
+      setSelectedCategory(categoryId);
+    };
+  
+    const handleDifficultyChange = (event) => {
+      const difficultyId = event.target.value;
+      setSelectedDifficulty(difficultyId);
+    };
+
+    const handleNewQuestion = async () => {
+      const response = await axios.get('/api/questions/', {
+        params: {
+          category: selectedCategory,
+          difficulty: selectedDifficulty,
+        },
+      });
+      setQuestion(response.data)};
 
   return (
     <div>
@@ -27,10 +76,38 @@ function App() {
           <p>Category: {question.category}</p>
           <p>Difficulty: {question.difficulty}</p>
           <p>Eras: {question.eras}</p>
-
-          <button onClick={handleNewQuestion}>Get a new question</button>
         </div>
       ))}
+      <div>
+        <label htmlFor="category">Select a category:</label>
+        <select name="category" id="category" onChange={handleCategoryChange}>
+          {categories.map(category => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+        <br></br>
+        <label htmlFor="difficulty">Select a difficulty:</label>
+      <select name="difficulty" id="difficulty" onChange={handleDifficultyChange}>
+        {difficulties.map(difficulty => (
+          <option key={difficulty.id} value={difficulty.id}>
+            {difficulty.name}
+          </option>
+        ))}
+      </select>
+      <br></br>
+      <label htmlFor="eras">Select eras:</label>
+      <select name="eras" id="eras" multiple onChange={handleEraChange}>
+        {eras.map(era => (
+          <option key={era.id} value={era.id}>
+            {era.name}
+          </option>
+        ))}
+      </select>
+      <br></br>
+      <button onClick={handleNewQuestion}>Get a new question</button>
+      </div>
     </div>
   );
 }

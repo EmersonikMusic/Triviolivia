@@ -13,3 +13,27 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
         filter_fields = ('id', 'username', 'email')
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+        filter_fields = ('name',)
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+        filter_fields = ('name',)
+
+class DifficultySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Difficulty
+        fields = '__all__'
+        filter_fields = ('name',)
+
+class EraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Era
+        fields = '__all__'
+        filter_fields = ('name',)
