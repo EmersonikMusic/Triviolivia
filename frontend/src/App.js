@@ -11,15 +11,13 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get('/api/questions/?category=4&difficulty=2')
+      const response = await axios.get('api/questions/')
 
       setQuestion(response.data);
       console.log(response.data);
-    }
-    fetchData();
-  }, []);
+    
 
-  axios.get('/api/categories/')
+    axios.get('api/categories/')
       .then(response => {
         setCategories(response.data);
       })
@@ -27,7 +25,7 @@ function App() {
         console.error(error);
       });
 
-    axios.get('/api/difficulties/')
+    axios.get('api/difficulties/')
       .then(response => {
         setDifficulties(response.data);
       })
@@ -35,13 +33,17 @@ function App() {
         console.error(error);
       });
 
-      axios.get('/api/eras/')
+    axios.get('api/eras/')
       .then(response => {
         setEras(response.data);
       })
       .catch(error => {
         console.error(error);
       });
+    
+    }
+    fetchData();
+  }, []);
   
     const handleEraChange = (event) => {
       const selectedEras = Array.from(event.target.selectedOptions, option => option.value);
@@ -59,7 +61,7 @@ function App() {
     };
 
     const handleNewQuestion = async () => {
-      const response = await axios.get('/api/questions/', {
+      const response = await axios.get('api/questions/', {
         params: {
           category: selectedCategory,
           difficulty: selectedDifficulty,
@@ -73,8 +75,8 @@ function App() {
         <div key={question.id}>
           <h2>{question.text}</h2>
           <p>{question.answer}</p>
-          <p>Category: {question.category}</p>
-          <p>Difficulty: {question.difficulty}</p>
+          <p>Category: {question.category_name}</p>
+          <p>Difficulty: {question.difficulty_name}</p>
           <p>Eras: {question.eras}</p>
         </div>
       ))}
