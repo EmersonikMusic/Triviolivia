@@ -1,0 +1,101 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+    <div class="row">
+        <div class="col-3" style="text-align: center;">
+            <a href="{% url 'configure:question-list' %}"><h4>Questions</h4></a>
+            <table class ="table">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in questions %}
+                        <tr>
+                            <td><a href="{% url 'configure:question-update' question.id %}">{{ question.text }}</a></td>
+                            <td>{{ question.description }}</td>
+                        </tr>
+                    {% empty %}
+                        No Questions yet.
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3" style="text-align: center;">
+            <a href="{% url 'configure:category-list' %}"><h4>Categories</h4></a>
+            <table class ="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in categories %}
+                        <tr>
+                            <td><a href="{% url 'configure:category-update' category.id %}">{{ category.name }}</a></td>
+                            <td>{{ category.description }}</td>
+                        </tr>
+                    {% empty %}
+                        No Categories yet.
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3" style="text-align: center;">
+            <a href="{% url 'configure:era-list' %}"><h4>Eras</h4></a>
+            <table class ="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for era in eras %}
+                        <tr>
+                            <td><a href="{% url 'configure:era-update' era.id %}">{{ era.name }}</a></td>
+                            <td>{{ era.description }}</td>
+                        </tr>
+                    {% empty %}
+                    <tr>
+                        <td>No Eras Yet</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3" style="text-align: center;">
+            <a href="{% url 'configure:difficulty-list' %}"><h4>Difficulties</h4></a>
+            <table class ="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for difficulty in difficulties %}
+                        <tr>
+                            <td><a href="{% url 'configure:difficulty-update' difficulty.id %}">{{ difficulty.name }}</a></td>
+                            <td>{{ difficulty.description }}</td>
+                            <td>{{ difficulty.score }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td>No Difficulties Yet</td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+{% endblock %}

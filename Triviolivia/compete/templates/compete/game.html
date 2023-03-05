@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div hx-ext="ws" ws-connect="/ws/gameroom/">
+    {{game.name}}
+    <br>
+    To join this game, enter the code:
+    {{game.uuid}}
+    <br>
+    Current Players:
+    <br>
+    {% for user in game.all_users.all %}
+        {{user.username}}
+    {% empty %}
+        No users yet.
+    {% endfor %}
+</div>
+
+{% endblock %}

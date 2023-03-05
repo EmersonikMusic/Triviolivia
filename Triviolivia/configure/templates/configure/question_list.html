@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<h1>Questions</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Text</th>
+            <th>Category</th>
+            <th>Eras</th>
+            <th>Difficulty</th>
+            <th>Active</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+{% for question in object_list %}
+    <tbody>
+        <tr>
+            <td><a href="{% url 'configure:question-update' question.id %}">{{ question.text }}</a></td>
+            <td>{{ question.category }}</td>
+            <td>{% for era in question.eras.all %}{{era}}, {% endfor %}</td>
+            <td>{{ question.difficulty }}</td>
+            <td>{{ question.active }}</td>
+            <td>
+                <a href="{% url 'configure:question-delete' question.id %}">
+                    <button class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+{% empty %}
+    No Questions yet.
+{% endfor %}
+</table>
+
+<a href="{% url 'configure:question-create' %}">
+    <button class="btn btn-primary">Create New Question</button>
+</a>
+
+<a href="{% url 'configure:question-batch' %}">
+    <button class="btn btn-secondary">Batch Add from CSV</button>
+</a>
+
+
+{% endblock %}

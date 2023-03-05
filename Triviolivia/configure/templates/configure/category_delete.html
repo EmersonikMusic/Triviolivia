@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<h1>Categories</h1>
+
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}" and all associated questions?</p>
+    {{ form }}
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

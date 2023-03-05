@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<h1>Difficulties</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Score</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+{% for difficulty in object_list %}
+    <tbody>
+        <tr>
+            <td><a href="{% url 'configure:difficulty-update' difficulty.id %}">{{ difficulty.name }}</a></td>
+            <td>{{ difficulty.description }}</td>
+            <td>{{ difficulty.score }}</td>
+            <td>
+                <a href="{% url 'configure:difficulty-delete' difficulty.id %}">
+                    <button class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+{% empty %}
+    No Difficulties yet.
+{% endfor %}
+</table>
+
+<a href="{% url 'configure:difficulty-create' %}">
+    <button class="btn btn-primary">Create New Difficulty</button>
+</a>
+
+
+{% endblock %}

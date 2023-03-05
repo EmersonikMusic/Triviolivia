@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<h1>Eras</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+{% for era in object_list %}
+    <tbody>
+        <tr>
+            <td><a href="{% url 'configure:era-update' era.id %}">{{ era.name }}</a></td>
+            <td>{{ era.description }}</td>
+            <td>
+                <a href="{% url 'configure:era-delete' era.id %}">
+                    <button class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+{% empty %}
+    No Eras yet.
+{% endfor %}
+</table>
+
+<a href="{% url 'configure:era-create' %}">
+    <button class="btn btn-primary">Create New Era</button>
+</a>
+
+
+{% endblock %}

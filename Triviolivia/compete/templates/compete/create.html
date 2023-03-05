@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="{% url 'compete:create' %}">
+    {% csrf_token %}
+    What's the name of the game?
+    <input type="text" id="name" name="name"></input>
+    <br>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+{% endblock %}

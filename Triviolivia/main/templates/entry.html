@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    ul#id_first_quarter li{
+     display: inline-block;
+     }
+   </style>
+<form method="post">
+    {% csrf_token %}
+
+    <table><div class="form-check form-check-inline">{{ form.as_table }}</div></table>
+    <input type="submit" value="Submit">
+
+{% endblock %}
