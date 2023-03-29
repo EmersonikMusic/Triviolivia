@@ -25,6 +25,7 @@ class QuestionList(generics.ListAPIView):
             difficulty = self.request.query_params.get('difficulty')
 
             if category is not None:
+                
                 queryset = queryset.filter(category=category)
             
             if era is not None:
