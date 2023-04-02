@@ -1,0 +1,208 @@
+body {
+    background-color: #121213;
+    color: #ffffff;
+}
+
+* {
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+button {
+    margin: 0;
+    background-color: #000000;
+}
+
+h1 {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    /* width: 100%; */
+    color: #ffffff;
+    /* background-color: #000000; */
+    margin: 30px auto;
+}
+
+h2 {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    /* width: 100%; */
+    color: #ffffff;
+    align-content: center;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#wrapper {
+    outline: 1px solid red;
+}
+
+#menu {
+    outline: 1px solid blue;
+    margin: auto 10px;
+    position: absolute;
+}
+
+#menu button {
+    outline: 1px solid grey;
+    width: 100px;
+    height: relative;
+    font-size: 10px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+}
+
+#menu .menu_left{
+    outline: 1px solid yellow;
+    width: 50%;
+    float: left;
+}
+
+#menu .menu_right{
+    outline: 1px solid orange;
+    width: 50%;
+    float: right;
+}
+
+#categories button:hover {
+    outline: 1px solid blue;
+}
+
+#art button {
+    background-color: #dd7e6b;
+}
+
+#economics button {
+    background-color: #38761d;
+}
+
+#food button {
+    background-color: #990000;
+}
+
+#geography button {
+    background-color: #783f04;
+}
+
+#history button {
+    background-color: #f1c232;
+} 
+
+#language button {
+    background-color: #9fc5e8;
+}
+
+#literature button {
+    background-color: #ff9900;
+}
+
+#math button {
+    background-color: #000000;
+}
+
+#miscellaneous button {
+    background-color: #674ea7;
+}
+
+#movies button {
+    background-color: #660000;
+}
+
+#music button {
+    background-color: #0b5394;
+}
+
+#nature button {
+    background-color: #93c47d;
+}
+
+#politics button {
+    background-color: #351c75;
+}
+
+#pop-culture button {
+    background-color: #cc4125;
+}
+
+#religion button {
+    background-color: #ff00ff;
+}
+
+#science button {
+    background-color: #a64d79;
+}
+
+#sports button {
+    background-color: #999999;
+}
+
+#technology button {
+    background-color: #ff0000;
+}
+
+#television button {
+    background-color: #3c78d8;
+}
+
+#video-games button {
+    background-color: #9900ff;
+}
+
+#options button {
+    outline: 1px solid grey;
+    width: 100px;
+    height: relative;
+    font-size: 10px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #fff;
+    background-color: #5A5A5A;
+    border-style: none;
+    cursor: pointer;
+}
+
+#options button:hover {
+    outline: 1px solid blue;
+}
+
+#start-pause button {
+    outline: 1px solid grey;
+    width: 255px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #fff;
+    background-color: #38761d;
+    border-style: none;
+    cursor: pointer;
+}
+
+#settings button {
+    width: 255px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 1px auto;
+    background-color: #FFF;
+    color: #000000;
+    font-size: 26px;
+    border-style: none;
+    cursor: pointer;
+}
+
+#Timer {
+    font-size: 100px;
+    color: #ffffff;
+}
+
+#question-container {
+    background-color: 'red' !important;
+}

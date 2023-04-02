@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='description' content='JavaScript calculator' />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='triviolivia.css'>
+        <title>TRIVIOLIVIA - The world's deepest and most customizable trivia source</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <h1>
+                TRIVIOLIVIA - The world's deepest and most customizable trivia source</br>
+                Proudly brought to you by GodGamerGames.com
+            </h1>
+
+            <div id="menu" class="menu_visable">
+                <div id="menu_categories" class="menu_left">
+                    <h2> CATEGORIES</h2>
+                    <div id='art'>
+                        <button onclick='toggle_categories(this.id)' id='art' title='Painting, sculpture, photography, theater, opera, museums, typography...'>ART</button> <br/>
+                    </div>
+                    <div id='economics'>
+                        <button onclick='toggle_categories(this.id)' id='economics' type='button' title='Finance, concepts, business, money, currency, cryptocurrency...'>ECONOMICS</button> <br/>
+                    </div>
+                    <div id='food'>
+                        <button onclick='toggle_categories(this.id)' id='food' type='button' title='Foodstuffs, drinks, alcohols, brands, ingredients, restaurants...'>FOOD</button> <br/>
+                    </div>
+                    <div id='geography'>
+                        <button onclick='toggle_categories(this.id)' id='geography' type='button' title='Countries, cities, capitals, landmarks, bodies of water, geology...'>GEOGRAPHY</button> <br/>
+                    </div>
+                    <div id='history'>
+                        <button onclick='toggle_categories(this.id)' id='history' type='button' title='Events, wars, dates, deaths, achievements...'>HISTORY</button> <br/>
+                    </div>
+                    <div id='language'>
+                        <button onclick='toggle_categories(this.id)' id='language' type='button' title='Definitions, parts of speech, translations, anagrams, quotes...'>LANGUAGE</button> <br/>
+                    </div>
+                    <div id='literature'>
+                        <button onclick='toggle_categories(this.id)' id='literature' type='button' title='Novels, novellas, comics, graphic novels, poetry...'>LITERATURE</button> <br/>
+                    </div>
+                    <div id='math'>
+                        <button onclick='toggle_categories(this.id)' id='math' type='button' title='Problems, concepts, branches, mathematicians...'>MATH</button> <br/>
+                    </div>
+                    <div id = 'miscellaneous'>
+                        <button onclick='toggle_categories(this.id)' id='miscellaneous' type='button' title='Philosophy, mythology, astrology, education, slogans, law, games...'>MISCELLANEOUS</button> <br/>
+                    </div>
+                    <div id='movies'>
+                        <button onclick='toggle_categories(this.id)' id='movies' type='button' title='Films, actors, directors, producers, characters, awards, lines...'>MOVIES</button> <br/>
+                    </div>
+                    <div id='music'>
+                        <button onclick='toggle_categories(this.id)' id='music' type='button' title='Artists, albums, genres, theory, festivals, lyrics...'>MUSIC</button> <br/>
+                    </div>
+                    <div id='nature'>
+                        <button onclick='toggle_categories(this.id)' id='nature' type='button' title='Environment, plants, animals, human body, space...'>NATURE</button> <br/>
+                    </div>
+                    <div id='politics'>
+                        <button onclick='toggle_categories(this.id)' id='politics' type='button' title='Governments, events, politicians, unions, treaties, geopolitics...'>POLITICS</button> <br/>
+                    </div>
+                    <div id='pop-culture'>
+                        <button onclick='toggle_categories(this.id)' id='pop culture' type='button' title='Celebrities, events, deaths, scandals, memes, marriages...'>POP CULTURE</button> <br/>
+                    </div>
+                    <div id='religion'>
+                        <button onclick='toggle_categories(this.id)' id='religion' type='button' title='World religions, popes, gods, traditions, holy days, sacred places...'>RELIGION</button> <br/>
+                    </div>
+                    <div id='science'>
+                        <button onclick='toggle_categories(this.id)' id='science' type='button' title='Biology, chemistry, physics, psychology, sociology, engineering, scientists...'>SCIENCE</button> <br/>
+                    </div>
+                    <div id='sports'>
+                        <button onclick='toggle_categories(this.id)' id='sports' type='button' title='Athletes, records, Olympics, World Cups, sports entertainment...'>SPORTS</button> <br/>
+                    </div>
+                    <div id='technology'>
+                        <button onclick='toggle_categories(this.id)' id='technology' type='button' title='Advances, concepts, inventions, computers, machines, vehicles, websites...'>TECHNOLOGY</button> <br/>
+                    </div>
+                    <div id='television'>
+                        <button onclick='toggle_categories(this.id)' id='television' type='button' title='Shows, actors, characters, networks, awards, game shows, reality TV...'>TELEVISION</button> <br/>
+                    </div>
+                    <div id='video-games'>
+                        <button onclick='toggle_categories(this.id)' id='video games' type='button' title='Games, developers, characters, esports...'>VIDEO GAMES</button> <br/>
+                    </div>
+                </div>
+                
+                <div id="menu_difficulty" class="menu_right">
+                        <h2>DIFFICULTY</h2>
+                        <button onclick='toggle_difficulties(this.id)' id='genius' type='button'>GENIUS</button> <br/>
+                        <button onclick='toggle_difficulties(this.id)' id='sharp' type='button'>SHARP</button> <br/>
+                        <button onclick='toggle_difficulties(this.id)' id='average' type='button'>AVERAGE</button> <br/>
+                        <button onclick='toggle_difficulties(this.id)' id='basic' type='button'>BASIC</button> <br/>
+                        <button onclick='toggle_difficulties(this.id)' id='insulting' type='button'>INSULTING</button> <br/>
+                </div>
+                  
+                <div id="menu_question_time" class="menu_right">
+                    <h2>QUESTION TIME</h2>
+                    <button onclick='change_time_per_question(this.id)' id=5 type='button'>5 SECONDS</button> <br/>
+                    <button onclick='change_time_per_question(this.id)' id=10 type='button'>10 SECONDS</button> <br/>
+                    <button onclick='change_time_per_question(this.id)' id=20 type='button'>20 SECONDS</button> <br/>
+                    <button onclick='change_time_per_question(this.id)' id=30 type='button'>30 SECONDS</button> <br/>
+                    <button onclick='change_time_per_question(this.id)' id=60 type='button'>60 SECONDS</button> <br/>
+                </div>
+                    
+                <div id="menu_answer_time" class="menu_right">
+                    <h2>ANSWER TIME</h2>
+                    <button onclick='change_time_per_answer(this.id)' id=5 type='button'>5 SECONDS</button> <br/>
+                    <button onclick='change_time_per_answer(this.id)' id=10 type='button'>10 SECONDS</button> <br/>
+                    <button onclick='change_time_per_answer(this.id)' id=20 type='button'>20 SECONDS</button> <br/>
+                    <button onclick='change_time_per_answer(this.id)' id=30 type='button'>30 SECONDS</button> <br/>
+                    <button onclick='change_time_per_answer(this.id)' id=60 type='button'>60 SECONDS</button> <br/>
+                </div>       
+            </div>
+
+            <div id="container_game">
+                <div id='question-container' class="question-container"></div>
+                <div class="answer-container"></div>
+            </div>
+
+            <div id='start-pause'>
+                <button onclick='start_or_pause_game()' id='start-pause' type='button'>START/PAUSE</button> <br/>
+            </div>
+            <div id='settings'>
+                <button onclick='toggle_menu()' id='toggle_menu' type='button'>SETTINGS</button>
+            </div>
+            <center><p id="demo"></p></center>
+        </div>
+
+        <script src="triviolivia.js"></script>
+
+    </body>
+</html>
