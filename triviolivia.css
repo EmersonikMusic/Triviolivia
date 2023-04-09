@@ -1,0 +1,232 @@
+body {
+    background-color: #121213;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+* {
+    color: #ffffff;
+    font-family: 'American Typewriter', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+button {
+    margin: 0;
+    background-color: #b7b7b7;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'American Typewriter', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+
+}
+
+h2 {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    color: #ffffff;
+    align-content: center;
+    text-align: center;
+    font-family: 'American Typewriter', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#menu {
+    position: absolute;
+}
+
+#menu button {
+    width: 150px;
+    height: relative;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+}
+
+#menu .menu_left{
+    width: 40%;
+    float: left;
+}
+
+#menu .menu_right{
+    width: 40%;
+    float: right;
+
+}
+
+#categories button:hover {
+    border: 1px;
+}
+
+#art button {
+    background-color: #dd7e6b;
+}
+
+#economics button {
+    background-color: #315303;
+}
+
+#food button {
+    background-color: #990000;
+}
+
+#games button {
+    background-color: #134f5c;
+}
+
+#geography button {
+    background-color: #91774C;
+}
+
+#history button {
+    background-color: #f1c232;
+} 
+
+#human-body button {
+    background-color: #f6b26b;
+} 
+
+#language button {
+    background-color: #9fc5e8;
+}
+
+#literature button {
+    background-color: #CC5500;
+}
+
+#math button {
+    background-color: #434343;
+}
+
+#miscellaneous button {
+    background-color: #674ea7;
+}
+
+#movies button {
+    background-color: #660000;
+}
+
+#music button {
+    background-color: #0b5394;
+}
+
+#nature button {
+    background-color: #93c47d;
+}
+
+#philosophy button {
+    background-color: #76a5af;
+}
+
+#politics button {
+    background-color: #351c75;
+}
+
+#pop-culture button {
+    background-color: #cc4125;
+}
+
+#science button {
+    background-color: #a64d79;
+}
+
+#sports button {
+    background-color: #999999;
+}
+
+#technology button {
+    background-color: #cc0000;
+}
+
+#television button {
+    background-color: #3c78d8;
+}
+
+#theater button {
+    background-color: #7f6000;
+}
+
+#theology button {
+    background-color: #c27ba0;    ;
+}
+
+#video-games button {
+    background-color: #9900ff;
+}
+
+
+#genius button {
+    background-color: #cc4125;
+}
+
+#sharp button {
+    background-color: #e69138;
+}
+
+#average button {
+    background-color: #f1c232;
+}
+
+#easy button {
+    background-color: #6aa84f;
+}
+
+#casual button {
+    background-color: #38761d;
+}
+
+button:hover {
+    outline: 1px solid grey;
+}
+
+#start-pause button {
+    width: 255px;
+    height: 30px;
+    font-size: 26px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #fff;
+    background-color: green;
+    border-style: none;
+    cursor: pointer;
+}
+
+#settings button {
+    width: 255px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 1px auto;
+    color: #FFF;
+    font-size: 26px;
+    border-style: none;
+    cursor: pointer;
+}
+
+#Timer {
+    font-size: 100px;
+    color: #ffffff;
+}
+
+#demo {
+    font-size: 15px;
+    padding: 10px;
+}
+
+#question-container {
+    font-size: 60px;
+}
+
+#answer-container {
+    font-size: 60px;
+}
